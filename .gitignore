@@ -1,0 +1,5 @@
+kube*
+node_modules
+makefile
+package-lock.json
+.DS_Store

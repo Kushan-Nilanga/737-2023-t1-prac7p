@@ -1,0 +1,15 @@
+# Service Configuration
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-kubernetes-app-service
+  labels:
+    app: my-kubernetes-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-kubernetes-app
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3000

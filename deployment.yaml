@@ -1,0 +1,27 @@
+# Deployment Configuration
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-kubernetes-app-deployment
+  labels:
+    app: my-kubernetes-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-kubernetes-app
+  template:
+    metadata:
+      labels:
+        app: my-kubernetes-app
+    spec:
+      containers:
+        - name: my-kubernetes-app
+          image: 329045634983.dkr.ecr.ap-southeast-2.amazonaws.com/kube-stack-ecr:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+
